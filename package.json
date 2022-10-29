@@ -1,0 +1,25 @@
+{
+  "name": "week5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "all.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/potatoleee/js-week5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/potatoleee/js-week5/issues"
+  },
+  "homepage": "https://github.com/potatoleee/js-week5#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "jquery": "^3.6.1"
+  },
+  "devDependencies": {}
+}
