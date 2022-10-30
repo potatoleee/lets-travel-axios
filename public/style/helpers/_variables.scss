@@ -4,6 +4,7 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:wght@500&display=swap');
 
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
@@ -67,13 +68,14 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       #E6553B; // $blue !default;
-$secondary:     #808080;//$gray-600 !default;
+$primary:       #00807E; // $blue !default;
+$secondary:     #64C3BF;//$gray-600 !default;
 $success:       #53C139;//$green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        #E6553B;//$red !default;
-$light:         #F0F0F0;//$gray-100 !default;
+$light:         #F7F7F7;//$gray-100 !default;
+$input-gray:    #FAFAFA;
 $dark:          $black !default;
 // scss-docs-end theme-color-variables
 
@@ -86,7 +88,8 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "input-gray": $input-gray
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -254,16 +257,20 @@ $spacers: (
   2: $spacer * .5,    //8px
   3: $spacer * .75,   //12px
   4: $spacer,         //16px
-  5: $spacer * 1.5,   //24px
-  6: $spacer * 2,     //32px
-  7: $spacer * 2.5,   //40px
-  8: $spacer * 3,     //48px
-  9: $spacer * 3.5,   //56px
-  10: $spacer * 4,    //64px
-  11: $spacer * 4.5,  //72px
-  12: $spacer * 5,    //80px
-  13: $spacer * 5.5,  //88px
-  14: $spacer * 6,    //96px
+  5: $spacer * 1.25,  //20px
+  6: $spacer * 1.5,   //24px
+  7: $spacer * 2,     //32px
+  8: $spacer * 2.5,   //40px
+  9: $spacer * 3,     //48px
+  10: $spacer * 3.5,   //56px
+  11: $spacer * 4,    //64px
+  12: $spacer * 4.5,  //72px
+  13: $spacer * 5,    //80px
+  14: $spacer * 5.5,  //88px
+  15: $spacer * 6,    //96px
+  16: $spacer * 6.25, //100px
+  17: $spacer * 7.5,  //120px
+  auto: auto,
   max: 100%,
   85p: 85%,
 ) !default;
@@ -298,8 +305,8 @@ $position-values: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   #F0F0F0;//$white !default;
-$body-color:                $black;//$gray-900 !default;
+$body-bg:                   $white !default;
+$body-color:                #818A91;//$black;//$gray-900 !default;
 $body-text-align:           null !default;
 
 
@@ -365,7 +372,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           1.5rem !default;
+$grid-gutter-width:           1.875rem !default;
 $grid-row-columns:            6 !default;
 
 $gutters: $spacers !default;
@@ -390,18 +397,18 @@ $border-widths: (
   10: 10px,
 ) !default;
 
-$border-color:                $black !default;
+$border-color:                #DEE2E6;//$black !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
 $border-radius:               .25rem !default;
 $border-radius-sm:            .2rem !default;
-$border-radius-lg:            .3rem !default;
+$border-radius-lg:            .75rem !default;
 $border-radius-pill:          50rem !default;
 // scss-docs-end border-radius-variables
 
 // scss-docs-start box-shadow-variables
-$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow:                  0 3px 6px #00000029 !default;
 $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
@@ -455,14 +462,15 @@ $font-size-lg:                $font-size-base * 1.25 !default;
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
 $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
 
-$line-height-base:            1.5 !default;
+$line-height-base:            1.375 !default;
 $line-height-sm:              1.25 !default;
-$line-height-lg:              2 !default;
+$line-height-lg:              1.5 !default;
 
 $h1-font-size:                $font-size-base * 3 !default;//48
 $h2-font-size:                $font-size-base * 2 !default;//32
@@ -477,16 +485,24 @@ $xxl-font-size:               $font-size-base * 5 !default;//80
 
 // scss-docs-start font-sizes
 $font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size,
-  7: $h7-font-size,
-  8: $h8-font-size,
-  xxl: $xxl-font-size,
-  xs: 10px,
+  // 1: $h1-font-size,
+  // 2: $h2-font-size,
+  // 3: $h3-font-size,
+  // 4: $h4-font-size,
+  // 5: $h5-font-size,
+  // 6: $h6-font-size,
+  // 7: $h7-font-size,
+  // 8: $h8-font-size,
+  // xxl: $xxl-font-size,
+  // xs: 10px,
+  1: 3rem,        //48px
+  2: 2rem,        //32px
+  3: 1.5rem,      //24px
+  4: 1.25rem,     //20px
+  5: 1.125rem,    //18px
+  6: 1rem,        //16px
+  7: 0.875rem,    //14px
+  8: 0.75rem,     //12px
 ) !default;
 // scss-docs-end font-sizes
 
