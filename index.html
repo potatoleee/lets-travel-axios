@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./public/style/all.css">
 </head>
 <body>
-    <div class="container mt-lg-17 mb-lg-16">
+    <div class="container mt-15 mb-14 mt-lg-17 mb-lg-16">
         <div class="row justify-content-center">
             <div class="col-lg-10 rounded-3 shadow py-11">
                 <div class="row justify-content-center">
@@ -58,19 +58,19 @@
                         <!-- 套票金額 start -->
                         <div class="d-flex align-items-center  gap-7 mb-4">
                             <label for="ticketPrice" class="text-primary fw-medium text-nowrap">套票金額</label>
-                            <input type="text" id="ticketPrice" placeholder="請填寫套票金額" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
+                            <input type="number" id="ticketPrice" placeholder="請填寫套票金額" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
                         </div>
                         <!-- 套票金額 end -->
                         <!-- 套票組數 start -->
                         <div class="d-flex align-items-center  gap-7 mb-4">
                             <label for="ticketNum" class="text-primary fw-medium text-nowrap">套票組數</label>
-                            <input type="text" id="ticketNum" placeholder="請填寫套票組數" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
+                            <input type="number" id="ticketNum" placeholder="請填寫套票組數" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
                         </div>
                         <!-- 套票組數 end -->
                         <!-- 套票星級 start -->
                         <div class="d-flex align-items-center  gap-7 mb-4">
                             <label for="ticketScore" class="text-primary fw-medium text-nowrap">套票星級</label>
-                            <input type="text" id="ticketScore" placeholder="請填寫套票星級" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
+                            <input type="number" id="ticketScore" placeholder="請填寫套票星級" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
                         </div>
                         <!-- 套票星級 end -->
                         <!-- 套票描述 start -->
@@ -97,8 +97,8 @@
         <div class="container">
              <div class="row justify-content-center">
                 <div class="col-10">
-                    <div class="row align-items-center mb-9 mt-10">
-                        <div class="col-3">
+                    <div class="row flex-column flex-lg-row   align-items-center mb-9 mt-10">
+                        <div class="col-lg-3 mb-5 mb-lg-0">
                             <select class="form-select py-2 border-gray  border  " aria-label="Default select example">
                                 <option value="" disabled selected hidden>請選擇景點地區</option>
                                 <option value="1">全部地區</option>
@@ -107,7 +107,7 @@
                                 <option value="3">高雄</option>
                             </select>
                         </div>
-                        <div class="col-9">
+                        <div class="col-lg-9 text-center text-lg-start">
                             <p>本次搜尋共3筆資料</p>
                         </div>
                     </div>
@@ -116,8 +116,8 @@
                 </div>
              </div>
              <!-- 搜尋結果 start -->
-             <ul class="row gy-8">
-                <li class="col-4">
+             <ul class="row gy-8 mb-17 ticketResult">
+                <!-- <li class="col-4">
                     <div class="card h-100 border shadow">
                         <div class="position-relative">
                             <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台北</p>
@@ -143,7 +143,7 @@
                     <div class="card h-100 border shadow">
                         <div class="position-relative">
                             <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台北</p>
-                            <img src="./public/images/travel_4.png" alt="綠島自由行套行程">
+                            <img src="./public/images/travel_4.png" alt="清境高空觀景步道二日遊">
                             <p class="position-absolute bottom-m12p start-0 bg-primary  text-white py-1 px-2 rounded-end">8.2</p>
                         </div>
                         <div class="bg-white px-5 pt-5 pb-4">
@@ -165,12 +165,12 @@
                     <div class="card h-100 border shadow">
                         <div class="position-relative">
                             <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台中</p>
-                            <img src="./public/images/travel_6.png" alt="綠島自由行套行程">
+                            <img src="./public/images/travel_6.png" alt="南庄度假村露營車二日遊">
                             <p class="position-absolute bottom-m12p start-0 bg-primary  text-white py-1 px-2 rounded-end">9.2</p>
                         </div>
                         <div class="bg-white px-5 pt-5 pb-4">
                             <h3 class="fw-medium fs-3 mb-4 pb-1 border-bottom border-2 border-primary text-primary ">南庄度假村露營車二日遊</h3>
-                            <p class="mb-7">南庄雲水豪華露營車，快來擁有最愜意的露營體驗吧！ 一泊一食，輕鬆享受露營車樂趣。 獨立衛浴與私人戶外露臺。 入住豪華露營車還能使用戶外SPA大眾湯，感受美人湯魅力。</p>
+                            <p class="mb-7">南庄雲水豪華露營車，快來擁有最愜意的露營體驗吧！一泊一食，輕鬆享受露營車樂趣。獨立衛浴與私人戶外露臺。入住豪華露營車還能使用戶外SPA大眾湯，感受美人湯魅力。</p>
                             <div class="d-flex align-items-center justify-content-between">
                                 <p class="d-flex align-items-center gap-1 text-primary">
                                     <span class="material-symbols-outlined icon-fill text-primary">
@@ -250,12 +250,11 @@
                         </div>
                     </div>
 
-                </li>
-                
-               
+                </li> -->
              </ul>
              <!-- 搜尋結果 end -->
         </div>
     </div>
+    <script src="./public/js/all.js"></script>
 </body>
 </html>
