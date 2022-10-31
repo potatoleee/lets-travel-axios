@@ -13,28 +13,84 @@
 <body>
     <div class="container my-lg-17">
         <div class="row justify-content-center">
-            <div class="col-lg-10 rounded-3 shadow">
-                <div class="row">
-                    <div class="col-lg-6">
+            <div class="col-lg-10 rounded-3 shadow py-11">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
                         <img src="./public/images/main_img.png" alt="">
                         <h1>
                             <img src="./public/images/logo.png" alt="Let's Travel！">
                         </h1>
                     </div>
                    
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         
-                   <p class="fs-3 text-primary border-bottom border-3 border-primary d-flex align-items-center gap-1 pb-1">
+                   <h2 class="fs-3 text-primary border-bottom border-3 border-primary d-flex align-items-center gap-1 pb-1 mb-7">
                     <span class="material-symbols-outlined text-primary">
                         add_circle
                         </span>
-                    新增旅遊套票</p>
+                    新增旅遊套票
+                    </h2>
+                    <form>
+                        <!-- 套票名稱 start -->
+                        <div class="d-flex align-items-center  gap-7 mb-4">
+                            <label for="ticketName" class="text-primary fw-medium text-nowrap">套票名稱</label>
+                            <input type="text" id="ticketName" placeholder="請填寫套票名稱" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
+                        </div>
+                        <!-- 套票名稱 end -->
+                        <!-- 圖片網址 start -->
+                        <div class="d-flex align-items-center gap-7 mb-4">
+                            <label for="ticketAddress" class="text-primary fw-medium text-nowrap">圖片網址</label>
+                            <input type="text" id="ticketAddress" placeholder="請填寫圖片網址" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100">
+                        </div>
+                        <!-- 圖片網址 end -->
+                        <!-- 景點地區 start -->
+                        <div class="d-flex align-items-center gap-7 mb-4">
+                            <label for="
+                            attractionArea" class="text-primary fw-medium text-nowrap">景點地區</label>
+                            <select class="form-select py-2 border-primary border-bottom border-1 rounded-0 bg-input-gray" aria-label="Default select example">
+                                <option value="" disabled selected hidden>請選擇景點地區</option>
+                                <option value="1">台北</option>
+                                <option value="2">台中</option>
+                                <option value="3">高雄</option>
+                              </select>
+                        </div>
+                        <!-- 景點地區 end -->
+                        <!-- 套票金額 start -->
+                        <div class="d-flex align-items-center  gap-7 mb-4">
+                            <label for="ticketPrice" class="text-primary fw-medium text-nowrap">套票金額</label>
+                            <input type="text" id="ticketPrice" placeholder="請填寫套票金額" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
+                        </div>
+                        <!-- 套票金額 end -->
+                        <!-- 套票組數 start -->
+                        <div class="d-flex align-items-center  gap-7 mb-4">
+                            <label for="ticketNum" class="text-primary fw-medium text-nowrap">套票組數</label>
+                            <input type="text" id="ticketNum" placeholder="請填寫套票組數" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
+                        </div>
+                        <!-- 套票組數 end -->
+                        <!-- 套票星級 start -->
+                        <div class="d-flex align-items-center  gap-7 mb-4">
+                            <label for="ticketScore" class="text-primary fw-medium text-nowrap">套票星級</label>
+                            <input type="text" id="ticketScore" placeholder="請填寫套票星級" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
+                        </div>
+                        <!-- 套票星級 end -->
+                        <!-- 套票描述 start -->
+                        <div class="d-flex align-items-start  gap-7 mb-6">
+                            <label for="ticketDescription" class="text-primary fw-medium text-nowrap">套票描述</label>
+                            <textarea  id="ticketDescription" cols="100%" rows="5" placeholder="請填寫套票描述（限 100 字）" class="py-2 px-3 border-primary border-bottom bg-input-gray "></textarea>
+                        </div>
+                        <!-- 套票描述 end -->
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary px-8 py-2">新增套票</button>
+                        </div>
+
+
+                    </form>
+                   
                     </div>
              </div>
             </div>
         </div>
        
     </div>
-  
 </body>
 </html>

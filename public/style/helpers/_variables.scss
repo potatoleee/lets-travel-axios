@@ -76,7 +76,9 @@ $warning:       $yellow !default;
 $danger:        #E6553B;//$red !default;
 $light:         #F7F7F7;//$gray-100 !default;
 $input-gray:    #FAFAFA;
+$dark-gray:     #818A91;
 $dark:          $black !default;
+
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -89,7 +91,8 @@ $theme-colors: (
   "danger":     $danger,
   "light":      $light,
   "dark":       $dark,
-  "input-gray": $input-gray
+  "input-gray": $input-gray,
+  "dark-gray":  $dark-gray
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -306,7 +309,7 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                #818A91;//$black;//$gray-900 !default;
+$body-color:                #818A91 !default;//$black;//$gray-900 
 $body-text-align:           null !default;
 
 
