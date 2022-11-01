@@ -47,7 +47,7 @@
                         <div class="d-flex align-items-center gap-7 mb-4">
                             <label for="
                             attractionArea" class="text-primary fw-medium text-nowrap">景點地區</label>
-                            <select class="form-select py-2 border-primary border-bottom border-1  bg-input-gray" aria-label="Default select example">
+                            <select class="form-select py-2 border-primary border-bottom border-1  bg-input-gray" id="ticketLocation" aria-label="Default select example">
                                 <option value="" disabled selected hidden>請選擇景點地區</option>
                                 <option value="台北">台北</option>
                                 <option value="台中">台中</option>
@@ -80,7 +80,7 @@
                         </div>
                         <!-- 套票描述 end -->
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary px-8 py-2">新增套票</button>
+                            <button type="button" class="btn btn-primary px-8 py-2" id="btnAddTicket">新增套票</button>
                         </div>
 
 
@@ -117,7 +117,7 @@
              </div>
              <!-- 搜尋結果 start -->
              <ul class="row gy-8 mb-17 ticketResult">
-                <!-- <li class="col-4">
+                <li class="col-4">
                     <div class="card h-100 border shadow">
                         <div class="position-relative">
                             <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台北</p>
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="col-4">
+                <!-- <li class="col-4">
                     <div class="card h-100 border shadow">
                         <div class="position-relative">
                             <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台北</p>
@@ -250,7 +250,7 @@
                         </div>
                     </div>
 
-                </li>  -->
+                </li>   -->
              </ul>
              <!-- 搜尋結果 end -->
         </div>
