@@ -62,8 +62,10 @@ let data = [
     
   ];
 
+
 const ticketResult = document.querySelector(".ticketResult");
-let str = "";
+function init(){
+    let str = "";
 data.forEach(function(item){
     str += `<li class="col-md-6 col-lg-4">
     <div class="card h-100 border shadow">
@@ -89,3 +91,49 @@ data.forEach(function(item){
 </li>`
 });
 ticketResult.innerHTML= str;
+
+}
+init();
+
+const locationFilter = document.querySelector(".locationFilter");
+function updateList(e){
+    let str = "";
+    let select = e.target.value;
+    data.forEach(function(item,index){
+        if(select == item.area){
+            let content = `
+            <li class="col-md-6 col-lg-4">
+            <div class="card h-100 border shadow">
+                <div class="position-relative">
+                    <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">${item.area}</p>
+                    <img src="${item.imgUrl}" alt="綠島自由行套行程">
+                    <p class="position-absolute bottom-m12p start-0 bg-primary  text-white py-1 px-2 rounded-end">${item.rate}</p>
+                </div>
+                <div class="bg-white px-5 pt-5 pb-4">
+                    <h3 class="fw-medium fs-3 mb-4 pb-1 border-bottom border-2 border-primary text-primary ">${item.name}</h3>
+                    <p class="mb-7 pb-7">${item.description}</p>
+                    <div class="d-flex align-items-center justify-content-between position-absolute bottom-16p start-0 w-100 px-5">
+                        <p class="d-flex align-items-center gap-1 text-primary">
+                            <span class="material-symbols-outlined icon-fill text-primary">
+                                error
+                                </span>
+                            ${item.group}
+                        </p>
+                        <p class="d-flex align-items-center gap-1 text-primary">TWD <span class="font-roboto fs-2">$${item.price}</span></p>
+                    </div>
+                </div>
+            </div>
+        </li>`;
+        str += content;
+        ticketResult.innerHTML = str;
+        }
+    })
+    console.log(str);
+}
+// locationFilter.addEventListener("change",function(e){
+    
+// });
+
+// 在「下拉式選單」做監聽事件
+locationFilter.addEventListener('change',updateList,false);
+
