@@ -107,8 +107,8 @@
                                 <option value="高雄">高雄</option>
                             </select>
                         </div>
-                        <div class="col-lg-9 text-center text-lg-start">
-                            <p>本次搜尋共3筆資料</p>
+                        <div class="col-lg-9 text-center text-lg-start ">
+                            <p class="searchResultTotal">本次搜尋共筆資料</p>
                         </div>
                     </div>
                   
@@ -117,78 +117,11 @@
              </div>
              <!-- 搜尋結果 start -->
              <ul class="row gy-8 mb-17 ticketResult">
-                <li class="col-4">
-                    <div class="card h-100 border shadow">
-                        <div class="position-relative">
-                            <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台北</p>
-                            <img src="./public/images/travel_1.png" alt="綠島自由行套行程">
-                            <p class="position-absolute bottom-m12p start-0 bg-primary  text-white py-1 px-2 rounded-end">8.6</p>
-                        </div>
-                        <div class="bg-white px-5 pt-5 pb-4">
-                            <h3 class="fw-medium fs-3 mb-4 pb-1 border-bottom border-2 border-primary text-primary ">綠島自由行套裝行程</h3>
-                            <p class="mb-7">嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <p class="d-flex align-items-center gap-1 text-primary">
-                                    <span class="material-symbols-outlined icon-fill text-primary">
-                                        error
-                                        </span>
-                                    剩下最後8組
-                                </p>
-                                <p class="d-flex align-items-center gap-1 text-primary">TWD <span class="font-roboto fs-2">$1,280</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
                 <!-- <li class="col-4">
                     <div class="card h-100 border shadow">
                         <div class="position-relative">
                             <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台北</p>
-                            <img src="./public/images/travel_4.png" alt="清境高空觀景步道二日遊">
-                            <p class="position-absolute bottom-m12p start-0 bg-primary  text-white py-1 px-2 rounded-end">8.2</p>
-                        </div>
-                        <div class="bg-white px-5 pt-5 pb-4">
-                            <h3 class="fw-medium fs-3 mb-4 pb-1 border-bottom border-2 border-primary text-primary ">清境高空觀景步道二日遊</h3>
-                            <p class="mb-7">清境農場青青草原數十公頃碧草，餵食著數以百計的綿羊和牛群，中央山脈最高的北三段群峰形成一堵如帶的高牆，攔住清晨的薄霧山嵐，成就了從花蓮翻山而來的雲瀑在濁水溪谷積成雲海，這些景觀豐沛了清境觀景步道的風格，也涵養它無可取代的特色。</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <p class="d-flex align-items-center gap-1 text-primary">
-                                    <span class="material-symbols-outlined icon-fill text-primary">
-                                        error
-                                        </span>
-                                    剩下最後12組
-                                </p>
-                                <p class="d-flex align-items-center gap-1 text-primary">TWD <span class="font-roboto fs-2">$2,580</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-4 ">
-                    <div class="card h-100 border shadow">
-                        <div class="position-relative">
-                            <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台中</p>
-                            <img src="./public/images/travel_6.png" alt="南庄度假村露營車二日遊">
-                            <p class="position-absolute bottom-m12p start-0 bg-primary  text-white py-1 px-2 rounded-end">9.2</p>
-                        </div>
-                        <div class="bg-white px-5 pt-5 pb-4">
-                            <h3 class="fw-medium fs-3 mb-4 pb-1 border-bottom border-2 border-primary text-primary ">南庄度假村露營車二日遊</h3>
-                            <p class="mb-7">南庄雲水豪華露營車，快來擁有最愜意的露營體驗吧！一泊一食，輕鬆享受露營車樂趣。獨立衛浴與私人戶外露臺。入住豪華露營車還能使用戶外SPA大眾湯，感受美人湯魅力。</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <p class="d-flex align-items-center gap-1 text-primary">
-                                    <span class="material-symbols-outlined icon-fill text-primary">
-                                        error
-                                        </span>
-                                    剩下最後2組
-                                </p>
-                                <p class="d-flex align-items-center gap-1 text-primary">TWD <span class="font-roboto fs-2">$2,480</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="col-4">
-                    <div class="card h-100 border shadow">
-                        <div class="position-relative">
-                            <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台北</p>
-                            <img src="./public/images/travel_1.png" alt="綠島自由行套行程">
+                            <img class="object-cover w-100 h-45n"src="https://images.unsplash.com/photo-1501393152198-34b240415948?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="綠島自由行套行程">
                             <p class="position-absolute bottom-m12p start-0 bg-primary  text-white py-1 px-2 rounded-end">8.6</p>
                         </div>
                         <div class="bg-white px-5 pt-5 pb-4">
@@ -205,52 +138,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="col-4">
-                    <div class="card h-100 border shadow">
-                        <div class="position-relative">
-                            <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台北</p>
-                            <img src="./public/images/travel_4.png" alt="綠島自由行套行程">
-                            <p class="position-absolute bottom-m12p start-0 bg-primary  text-white py-1 px-2 rounded-end">8.2</p>
-                        </div>
-                        <div class="bg-white px-5 pt-5 pb-4">
-                            <h3 class="fw-medium fs-3 mb-4 pb-1 border-bottom border-2 border-primary text-primary ">清境高空觀景步道二日遊</h3>
-                            <p class="mb-7">清境農場青青草原數十公頃碧草，餵食著數以百計的綿羊和牛群，中央山脈最高的北三段群峰形成一堵如帶的高牆，攔住清晨的薄霧山嵐，成就了從花蓮翻山而來的雲瀑在濁水溪谷積成雲海，這些景觀豐沛了清境觀景步道的風格，也涵養它無可取代的特色。</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <p class="d-flex align-items-center gap-1 text-primary">
-                                    <span class="material-symbols-outlined icon-fill text-primary">
-                                        error
-                                        </span>
-                                    剩下最後12組
-                                </p>
-                                <p class="d-flex align-items-center gap-1 text-primary">TWD <span class="font-roboto fs-2">$2,580</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-4 ">
-                    <div class="card h-100 border shadow">
-                        <div class="position-relative">
-                            <p class="position-absolute top-m12p start-0 bg-secondary fs-4 text-white py-2 px-4 rounded-end">台中</p>
-                            <img src="./public/images/travel_6.png" alt="綠島自由行套行程">
-                            <p class="position-absolute bottom-m12p start-0 bg-primary  text-white py-1 px-2 rounded-end">9.2</p>
-                        </div>
-                        <div class="bg-white px-5 pt-5 pb-4">
-                            <h3 class="fw-medium fs-3 mb-4 pb-1 border-bottom border-2 border-primary text-primary ">南庄度假村露營車二日遊</h3>
-                            <p class="mb-7">南庄雲水豪華露營車，快來擁有最愜意的露營體驗吧！ 一泊一食，輕鬆享受露營車樂趣。 獨立衛浴與私人戶外露臺。 入住豪華露營車還能使用戶外SPA大眾湯，感受美人湯魅力。</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <p class="d-flex align-items-center gap-1 text-primary">
-                                    <span class="material-symbols-outlined icon-fill text-primary">
-                                        error
-                                        </span>
-                                    剩下最後2組
-                                </p>
-                                <p class="d-flex align-items-center gap-1 text-primary">TWD <span class="font-roboto fs-2">$2,480</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </li>   -->
+                </li>  -->
              </ul>
              <!-- 搜尋結果 end -->
         </div>
