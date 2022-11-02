@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="./public/style/all.css">
 </head>
 <body>
-    <div class="container mt-15 mb-14 mt-lg-17 mb-lg-16">
+    <div class="container mt-11 mb-10 mt-lg-17 mb-lg-16">
         <div class="row justify-content-center">
-            <div class="col-lg-10 rounded-3 shadow py-11">
+            <div class="col-lg-10 rounded-3 shadow py-8 py-lg-11">
                 <div class="row justify-content-center">
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 col-10 col-md-8">
                         <img src="./public/images/main_img.png" alt="">
                         <h1>
                             <img src="./public/images/logo.png" alt="Let's Travel！">
@@ -32,19 +32,19 @@
                     </h2>
                     <form>
                         <!-- 套票名稱 start -->
-                        <div class="d-flex align-items-center  gap-7 mb-4">
+                        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-7 mb-5 mb-md-4">
                             <label for="ticketName" class="text-primary fw-medium text-nowrap">套票名稱</label>
                             <input type="text" id="ticketName" placeholder="請填寫套票名稱" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
                         </div>
                         <!-- 套票名稱 end -->
                         <!-- 圖片網址 start -->
-                        <div class="d-flex align-items-center gap-7 mb-4">
+                        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-7 mb-5 mb-md-4">
                             <label for="ticketAddress" class="text-primary fw-medium text-nowrap">圖片網址</label>
                             <input type="text" id="ticketAddress" placeholder="請填寫圖片網址" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100">
                         </div>
                         <!-- 圖片網址 end -->
                         <!-- 景點地區 start -->
-                        <div class="d-flex align-items-center gap-7 mb-4">
+                        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-7 mb-5 mb-md-4">
                             <label for="
                             attractionArea" class="text-primary fw-medium text-nowrap">景點地區</label>
                             <select class="form-select py-2 border-primary border-bottom border-1  bg-input-gray" id="ticketLocation" aria-label="Default select example">
@@ -56,31 +56,31 @@
                         </div>
                         <!-- 景點地區 end -->
                         <!-- 套票金額 start -->
-                        <div class="d-flex align-items-center  gap-7 mb-4">
+                        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-7 mb-5 mb-md-4">
                             <label for="ticketPrice" class="text-primary fw-medium text-nowrap">套票金額</label>
                             <input type="number" id="ticketPrice" placeholder="請填寫套票金額" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
                         </div>
                         <!-- 套票金額 end -->
                         <!-- 套票組數 start -->
-                        <div class="d-flex align-items-center  gap-7 mb-4">
+                        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-7 mb-5 mb-md-4">
                             <label for="ticketNum" class="text-primary fw-medium text-nowrap">套票組數</label>
                             <input type="number" id="ticketNum" placeholder="請填寫套票組數" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
                         </div>
                         <!-- 套票組數 end -->
                         <!-- 套票星級 start -->
-                        <div class="d-flex align-items-center  gap-7 mb-4">
+                        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-7 mb-5 mb-md-4">
                             <label for="ticketScore" class="text-primary fw-medium text-nowrap">套票星級</label>
-                            <input type="number" id="ticketScore" placeholder="請填寫套票星級" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
+                            <input type="number" oninput="if(value>10)value=10; if(value<1)value=1 " id="ticketScore" placeholder="請填寫套票星級（1~10)可有小數點" class="text-dark-gray bg-input-gray py-2 px-3 border-primary border-bottom border-1 w-100 ">
                         </div>
                         <!-- 套票星級 end -->
                         <!-- 套票描述 start -->
-                        <div class="d-flex align-items-start  gap-7 mb-6">
+                        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-7 mb-5 mb-md-4">
                             <label for="ticketDescription" class="text-primary fw-medium text-nowrap">套票描述</label>
-                            <textarea  id="ticketDescription" cols="100%" rows="5" placeholder="請填寫套票描述（限 100 字）" class="py-2 px-3 border-primary border-bottom bg-input-gray "></textarea>
+                            <textarea  id="ticketDescription" cols="100%" rows="5" placeholder="請填寫套票描述（限 100 字）" class="py-2 px-3 border-primary border-bottom bg-input-gray w-100"></textarea>
                         </div>
                         <!-- 套票描述 end -->
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-primary px-8 py-2" id="btnAddTicket">新增套票</button>
+                            <button type="button" class="btn btn-primary px-8 py-2 w-100 w-lg-auto" id="btnAddTicket">新增套票</button>
                         </div>
 
 
