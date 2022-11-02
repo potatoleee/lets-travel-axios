@@ -1,3 +1,4 @@
+
 let data = [
     {
       "id": 0,
@@ -100,7 +101,6 @@ data.forEach(function(item){
 });
 ticketResult.innerHTML= str;
 const searchResultNum = ticketResult.getElementsByTagName("li").length;
-console.log(searchResultNum);
 
 const searchResultTotal = document.querySelector(".searchResultTotal");
 searchResultTotal.innerHTML = `<p>本次搜尋共${searchResultNum}筆資料</p>`;
