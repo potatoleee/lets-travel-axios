@@ -1,5 +1,5 @@
+// import axios, {isCancel, AxiosError} from '../../node_modules/axios/dist/axios';
 
-// import axios from '../../node_modules/axios/dist/axios';
 
 let data =[];
 
@@ -7,7 +7,14 @@ axios.get('https://raw.githubusercontent.com/hexschool/js-training/main/travelAp
   .then(function (response) {
     data = response.data.data
     renderData(data);
-  });
+    renderC3();
+
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  });// axios 可以加上 .catch() ，若呼叫 API 發生錯誤時，可以執行處理或印出錯誤的程式
+ 
 
 // ticketResult 篩選後的全部結果
 const ticketResult = document.querySelector(".ticketResult");
@@ -109,20 +116,82 @@ function sendForm(){
         //都有填寫的話把，把新資料的push進obj
         let obj = {};
         obj.id = data.length;
-        obj.rate = ticketScore.value;
+        obj.rate = Number(ticketScore.value); //由於input 取得的值，預設都會是字串型別，所以這邊把它轉為數字型別
         obj.name = ticketName.value;
         obj.imgUrl = ticketAddress.value;
         obj.area = ticketLocation.value;
         obj.description = ticketDescription.value;
-        obj.group = ticketNum.value;
-        obj.price = ticketPrice.value;
-        console.log(obj);
+        obj.group = Number(ticketNum.value); //由於input 取得的值，預設都會是字串型別，所以這邊把它轉為數字型別
+        obj.price = Number(ticketPrice.value); //由於input 取得的值，預設都會是字串型別，所以這邊把它轉為數字型別
         data.push(obj);
         renderData(data);
         //送出資料後清空
         ticketForm.reset();
     }
 }//新增套票判斷 end
+
+
+
+function renderC3(){
+    // STEP1 篩選地區並累加數字成 {"高雄":1，"台北":1，"台中":1}之格式
+    let locationNumObj = {};
+    data.forEach(function(item){
+        //if(locationNumObj["高雄"]) == undefined 
+        if(locationNumObj[item.area] == undefined){
+            locationNumObj[item.area] = 1;
+        }else {
+            locationNumObj[item.area] += 1;
+        }
+    })
+    // STEP2 將物件格式轉換為下方的c3.js規定的陣列格式
+    //[ ['高雄', 2],
+    //  ['台中', 1],
+    //  ['台北',1] 
+    //]
+  
+    const locationNumAry = Object.keys(locationNumObj);
+    console.log(locationNumAry);//['高雄', '台北', '台中']
+
+    // locationNumAry.forEach(function(item){
+    //     let ary = {};
+    //     ary.area = item;
+    //     ary.num = locationNumObj[item];
+    //     newData.push(ary);
+    // })
+    // console.log(newData);
+    // {area: '高雄', num: 1}
+    // {area: '台北', num: 1} 
+    // {area: '台中', num: 1}
+
+    let newData = []
+    locationNumAry.forEach(function(item){
+        let ary =[];
+        ary.push(item);
+        ary.push(locationNumObj[item]);//這段因34段而來
+        newData.push(ary);
+    })
+    console.log(newData);
+    
+
+    let chart = c3.generate({
+        bindto: '#chart', // HTML 元素綁定
+        data: {
+            columns: newData,
+            type : 'donut',
+            colors:{
+                "高雄":"#E68618",
+                "台中":"#5151D3",
+                "台北":"#26C0C7",
+              }
+        },
+        donut: {
+            title: "套票地區比重"
+        }
+      
+    });
+}
+
+
    
 
 
