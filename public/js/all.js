@@ -2,20 +2,19 @@
 
 
 let data =[];
-
-axios.get('https://raw.githubusercontent.com/hexschool/js-training/main/travelApi.json')
-  .then(function (response) {
-    data = response.data.data
-    renderData(data);
-    renderC3();
-
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  });// axios 可以加上 .catch() ，若呼叫 API 發生錯誤時，可以執行處理或印出錯誤的程式
+function init(){
+    axios.get('https://raw.githubusercontent.com/hexschool/js-training/main/travelApi.json')
+      .then(function (response) {
+        data = response.data.data
+        renderData(data);
+        renderC3();
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });// axios 可以加上 .catch() ，若呼叫 API 發生錯誤時，可以執行處理或印出錯誤的程式
+}
  
-
 // ticketResult 篩選後的全部結果
 const ticketResult = document.querySelector(".ticketResult");
 
@@ -24,7 +23,6 @@ const locationFilter = document.querySelector(".locationFilter");
 
 // 顯示當前搜尋到幾筆資料
 const searchResultTotal = document.querySelector(".searchResultTotal");
-
 
 
 //渲染卡片、顯示當前幾筆資料
@@ -62,10 +60,6 @@ function renderData(renderData){
 }
 
 
-// 第一次進畫面時先渲染一次資料 data
-renderData(data);
-
-
 // 監聽select標籤 地區篩選 start
 locationFilter.addEventListener("change",function(e){
     const select = e.target.value;
@@ -100,16 +94,10 @@ const btnAddTicket = document.querySelector("#btnAddTicket");
 // 新增套票 dom元素 end
 
 
-//監聽 新增套票按鈕 start
+//新增套票按鈕 start
 btnAddTicket.addEventListener("click",function(e){
-    sendForm()
-})//監聽 新增套票按鈕 end
-
-
-//新增套票判斷 start
-function sendForm(){
-    //表單沒填寫完整判斷
-    if(ticketName.value == "" || ticketAddress.value == "" || ticketLocation.value == "" || ticketPrice.value == "" || ticketNum.value == "" || ticketScore.value == "" || ticketDescription.value == "" ){
+     //表單沒填寫完整判斷
+     if(ticketName.value == "" || ticketAddress.value == "" || ticketLocation.value == "" || ticketPrice.value == "" || ticketNum.value == "" || ticketScore.value == "" || ticketDescription.value == "" ){
         alert("表請格填寫完整");
         return
     }else{
@@ -125,32 +113,37 @@ function sendForm(){
         obj.price = Number(ticketPrice.value); //由於input 取得的值，預設都會是字串型別，所以這邊把它轉為數字型別
         data.push(obj);
         renderData(data);
+        //將新的data再執行renderC3()
+        renderC3();
         //送出資料後清空
         ticketForm.reset();
     }
-}//新增套票判斷 end
+})//新增套票按鈕 end
 
 
-
+// c3圖表渲染
 function renderC3(){
     // STEP1 篩選地區並累加數字成 {"高雄":1，"台北":1，"台中":1}之格式
     let locationNumObj = {};
     data.forEach(function(item){
         //if(locationNumObj["高雄"]) == undefined 
+        //上方這段的原理
+        // const obj = {};
+        // obj.a == undefined;
+
         if(locationNumObj[item.area] == undefined){
             locationNumObj[item.area] = 1;
         }else {
             locationNumObj[item.area] += 1;
         }
     })
+
     // STEP2 將物件格式轉換為下方的c3.js規定的陣列格式
     //[ ['高雄', 2],
     //  ['台中', 1],
     //  ['台北',1] 
     //]
-  
-    const locationNumAry = Object.keys(locationNumObj);
-    console.log(locationNumAry);//['高雄', '台北', '台中']
+    const locationNumAry = Object.keys(locationNumObj);    //['高雄', '台北', '台中']
 
     // locationNumAry.forEach(function(item){
     //     let ary = {};
@@ -167,7 +160,7 @@ function renderC3(){
     locationNumAry.forEach(function(item){
         let ary =[];
         ary.push(item);
-        ary.push(locationNumObj[item]);//這段因34段而來
+        ary.push(locationNumObj[item]);//這段因為上方註解而來
         newData.push(ary);
     })
     console.log(newData);
@@ -187,11 +180,10 @@ function renderC3(){
         donut: {
             title: "套票地區比重"
         }
-      
     });
 }
 
-
+init();//初次渲染
    
 
 
